@@ -1,3 +1,2 @@
 #!/bin/bash
 crunch 2 2 abcdefghijklmnopqrstuvwxyz | grep -v ^oo$
-
