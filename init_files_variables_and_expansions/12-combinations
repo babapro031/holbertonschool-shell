@@ -1,2 +1,2 @@
 #!/bin/bash
-crunch 2 2 abcdefghijklmnopqrstuvwxyz | grep -v ^oo$
+printf "%s\n" {a..z}{a..z}|grep -v '^oo$'
