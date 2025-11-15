@@ -1,6 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# shellcheck disable=SC2009
+# PID faylı
 PID_FILE="/var/run/my_process.pid"
 
 start() {
@@ -11,7 +11,7 @@ start() {
 
 stop() {
     if [ -f "$PID_FILE" ]; then
-        kill "$(cat "$PID_FILE")" 2>/dev/null
+        kill $(cat "$PID_FILE") 2>/dev/null
         rm -f "$PID_FILE"
         echo "manage_my_process stopped"
     else
@@ -26,10 +26,16 @@ restart() {
 }
 
 case "$1" in
-    start) start ;;
-    stop) stop ;;
-    restart) restart ;;
-    *) echo "Usage: manage_my_process {start|stop|restart}" ;;
-esac
-
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        restart
+        ;;
+    *)
+        echo "Usage: manage_my_process {start|stop|restart}"
+        ;;
 esac
