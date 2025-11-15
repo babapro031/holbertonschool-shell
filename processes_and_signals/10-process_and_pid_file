@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Faylın yolunu təyin edirik
+PID_FILE="/var/run/myscript.pid"
+
+# PID faylına öz PID-ini yazırıq
+echo $$ > "$PID_FILE"
+
+# SIGTERM üçün trap
+trap 'echo "I hate the kill command"' SIGTERM
+
+# SIGINT üçün trap
+trap 'echo "Y U no love me?!"' SIGINT
+
+# SIGQUIT və SIGTERM üçün trap (terminasiya və fayl silmə)
+trap 'rm -f "$PID_FILE"; exit' SIGQUIT SIGTERM
+
+# Sonsuz loop
+while true; do
+    echo "To infinity and beyond"
+    sleep 1
+done
