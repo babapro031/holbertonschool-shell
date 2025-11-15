@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#!/usr/bin/env bash
 # PID faylı
 PID_FILE="/var/run/my_process.pid"
 
