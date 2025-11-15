@@ -1,4 +1,5 @@
 #!/bin/bash
+#!/usr/bin/env bash
 # shellcheck disable=SC2009
 
 PID_FILE="/var/run/myscript.pid"
