@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
-# This script displays a list of currently running processes for all users in a hierarchical format
+# 1-list_your_processes
 
-ps -e --forest -o user,pid,ppid,cmd
+# Bütün prosesləri göstər, istifadəçi baxışı, proses ağacı ilə
+ps auxf
+
