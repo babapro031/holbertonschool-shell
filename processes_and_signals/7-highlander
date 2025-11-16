@@ -1,11 +1,3 @@
 #!/usr/bin/env bash
-# This script “kills” the 7-highlander process without using kill/killall
-# shellcheck disable=SC2009
-
-# Highlander PID tapılır
-pid=$(ps -eo pid,cmd | grep '7-highlander' | grep -v grep | awk '{print $1}')
-
-# Əgər PID tapılıbsa, prosesi OOM killer-a hədəf edirik
-if [ -n "$pid" ]; then
-    echo 9 > /proc/"$pid"/oom_score_adj
-fi
+# this code help us to kill 67
+trap 'echo "I am invincible!!!"' SIGTERM; while true; do echo "To infinity and beyond"; sleep 2; done
